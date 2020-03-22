@@ -8,7 +8,9 @@ function TreeMap(props) {
     
     const [focus, setFocus] = useState(null);
 
-    const ref = useRef()
+    const ref = useRef();
+
+  
   useEffect(() => {
     const drawTreemap = () => {
         
@@ -36,7 +38,7 @@ function TreeMap(props) {
             //.sort(function(a, b) { return b.height - a.height || b.value - a.value });
 
         var currentDepth;
-    
+        
         treemap(nodes);
 
         const chart = d3.select(ref.current);
@@ -51,6 +53,8 @@ function TreeMap(props) {
             })
             .attr("title", function(d) {
                 return d.data.name ? d.data.name : "null";
+            }).attr("id", function(d) {
+                return d.data.name ? d.data.name.split(" ")[0] : "null";
             });
 
             Cells
@@ -74,10 +78,7 @@ function TreeMap(props) {
             })
             .on("click", zoom)
             .append("p")
-            .attr("class", "label").attr("id", function(d,index) {
-                var totalWords = d.data.name
-                var firstWord = totalWords.replace(/ .*/,'');
-                return firstWord})
+            .attr("class", "label")
             .text(function(d) {
                 return d.data.name ? d.data.name : "---";
             });
@@ -94,7 +95,16 @@ function TreeMap(props) {
         function zoom(d) { // http://jsfiddle.net/ramnathv/amszcymq/
             
             console.log('clicked: ' + d.data.name + ', depth: ' + d.depth , d);
-            setFocus(d.data.name)
+            if((d.data.children)){
+                if(d.data.children.length > 1){
+                    setFocus(focus)
+                    
+                }else{   
+                    console.log('lessthan')
+                    setFocus(d.data.children[0].name)
+                }
+            }
+            
             // if (d.data.name === "About Me"){
             //     let node = d3.select("#Profile")
             //     // node.append("p").text("HELLO")
@@ -127,7 +137,6 @@ function TreeMap(props) {
         }   
     }
     props.treeMapData === null ? console.log("no data yet") : drawTreemap();
-    
     
   }, [props])
   

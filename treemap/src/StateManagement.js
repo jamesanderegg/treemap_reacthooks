@@ -24,7 +24,9 @@ function StateManagement(props) {
             }
         }
         
-      }, [props.focus, props.treeMapData])
+      }, [props.focus, props.treeMapData]) 
+
+
       useEffect(() => {
         console.log("NODE: ",node)
         if(node && (!props.focus)){
@@ -36,25 +38,9 @@ function StateManagement(props) {
         
       }, [node,props.focus])
       
-    // useEffect = () =>{
-        // if(props.treeMapData !== null){
-        //     if(props.focus !== null){
-        //         var node = document.getElementById('Profile')
-        //         console.log(node)
-        //         ReactDOM.render(
-                    
-        //               <Test />
-        //             ,
-        //             (node)
-        //           );
-        //     }
-    // }
-    // }
-    
-    
   
     return (
-        <div>hello</div>
+        <div></div>
     )
 }
 export default StateManagement;

@@ -47,7 +47,7 @@ nav .up:hover {
   position: absolute;
   background: transparent url("") no-repeat 50%/cover;
   overflow: hidden;
-  opacity: 0.8;
+  opacity: 1.0;
   transition: opacity 0.8s;
   cursor: pointer;
 }

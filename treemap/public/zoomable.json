@@ -5,9 +5,15 @@
 			"name": "About Me",
 			"children": [
 				{
+					"name": "Resume",
+					"children": [
+						{ "name": "File", "value": "cgi-1.jpg" }
+					]
+				},
+				{
 					"name": "Profile",
 					"children": [
-						{ "name": "<h1>hello</h1>", "value": "cgi-1.jpg" }
+						{ "name": "text", "value": "cgi-1.jpg" }
 					]
 				}
 			]
@@ -16,15 +22,15 @@
 			"name": "Projects",
 			"children": [
 				{
-					"name": "Web Projects",
+					"name": "Games",
 					"children": [
-						{ "name": "Web Project 1", "value": "litho-1.jpg" }
+						{ "name": "Snake", "value": "litho-1.jpg" }
 					]
 				},
 				{
-					"name": "Data Projects",
+					"name": "D3",
 					"children": [
-						{ "name": "Data Project 1", "value": "digital-1.jpg" }
+						{ "name": "MLB Stats", "value": "digital-1.jpg" }
 					]
 				}
 			]
@@ -42,6 +48,23 @@
 					"name": "Contact Form",
 					"children": [
 						{ "name": "Form 1", "value": "stitched-1.jpg" }
+					]
+				}			
+			]
+		},
+		{
+			"name": "Sign Up",
+			"children": [
+				{
+					"name": "Login",
+					"children": [
+						{ "name": "loginfeature", "value": "folding-1.jpg" }
+					]
+				},
+				{
+					"name": "Register",
+					"children": [
+						{ "name": "reagisterfeature", "value": "stitched-1.jpg" }
 					]
 				}			
 			]

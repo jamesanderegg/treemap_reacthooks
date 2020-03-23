@@ -94,8 +94,9 @@ function TreeMap(props) {
         
         function zoom(d) { // http://jsfiddle.net/ramnathv/amszcymq/
             
-            console.log('clicked: ' + d.data.name + ', depth: ' + d.depth , d);
+            console.log('clicked: ' + d.data.name , "ALL: ", d.data);
             if((d.data.children)){
+                console.log("Length", d.data.children.length)
                 if(d.data.children.length > 1){
                     setFocus(focus)
                     
@@ -142,10 +143,12 @@ function TreeMap(props) {
   
   return (
     <div className="feature" ref={ref}>
+    <StateManagment focus={focus} treeMapData={props.treeMapData} />
         <nav>
             <div className="up">&larr; UP</div>
-            <StateManagment focus={focus} treeMapData={props.treeMapData} />      
+                  
         </nav>
+        
     </div>
   );
 }

@@ -7,7 +7,8 @@ import StateManagment from "./StateManagement"
 function TreeMap(props) {
     
     const [focus, setFocus] = useState(null);
-
+    const [botClick, setBotClick ] = useState(null)
+    const [topClick, setTopClick ] = useState(null)
     const ref = useRef();
 
   
@@ -94,14 +95,15 @@ function TreeMap(props) {
         
         function zoom(d) { // http://jsfiddle.net/ramnathv/amszcymq/
             
-            console.log('clicked: ' + d.data.name , "ALL: ", d.data);
+            // console.log('clicked: ' + d.data.name , "ALL: ", d.data);
             if((d.data.children)){
-                console.log("Length", d.data.children.length)
+                
                 if(d.data.children.length > 1){
-                    setFocus(focus)
+                    setBotClick(d.data.name)
+                    setFocus(null)
                     
                 }else{   
-                    console.log('lessthan')
+                    setTopClick(d.data.name)
                     setFocus(d.data.children[0].name)
                 }
             }
@@ -137,13 +139,13 @@ function TreeMap(props) {
                 .classed("hide", false);
         }   
     }
-    props.treeMapData === null ? console.log("no data yet") : drawTreemap();
+    if(props.treeMapData){ drawTreemap();}
     
   }, [props])
   
   return (
     <div className="feature" ref={ref}>
-    <StateManagment focus={focus} treeMapData={props.treeMapData} />
+    <StateManagment focus={focus} treeMapData={props.treeMapData} botLevel={botClick} topLevel={topClick}/>
         <nav>
             <div className="up">&larr; UP</div>
                   

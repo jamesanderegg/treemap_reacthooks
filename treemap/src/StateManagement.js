@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import * as d3 from 'd3';
+import React, { useEffect, useState } from 'react';
+// import * as d3 from 'd3';
 import ReactDOM from 'react-dom';
-import Test from './Test'
+import ComponentDisplay from './ComponentDisplay'
 
 
 function StateManagement(props) {
@@ -13,10 +13,10 @@ function StateManagement(props) {
                 
                 var node = document.getElementById(props.focus.split(" ")[0])
                 setNode(node)
-            
+                
                 ReactDOM.render(
                     <React.StrictMode>
-                      <Test />
+                      <ComponentDisplay data={props} />
                     </React.StrictMode>
                     ,
                     (node)
@@ -24,15 +24,13 @@ function StateManagement(props) {
             }
         }
         
-      }, [props.focus, props.treeMapData]) 
+      }, [props]) 
 
 
       useEffect(() => {
-        console.log("NODE: ",node)
+        
         if(node && (!props.focus)){
             ReactDOM.unmountComponentAtNode(node);
-            console.log(props.focus)
-            console.log(node.id)
             
         }
         
@@ -40,7 +38,7 @@ function StateManagement(props) {
       
   
     return (
-        <div></div>
+        <div className="state-managment"></div>
     )
 }
 export default StateManagement;

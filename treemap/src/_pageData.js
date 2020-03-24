@@ -1,4 +1,8 @@
-{
+import React from 'react';
+import Login from "./components/User/Login"
+import Register from "./components/User/Register"
+
+const pageData = [{
 	"name": "Portfolio",
 	"children": [
 		{
@@ -30,24 +34,24 @@
 				{
 					"name": "D3",
 					"children": [
-						{ "name": "MLB Stats", "value": "digital-1.jpg" }
+						{ "name": "MLB", "value": "digital-1.jpg" }
 					]
 				}
 			]
 		},
 		{
-			"name": "Contact Me",
+			"name": "Contact",
 			"children": [
 				{
 					"name": "Resume",
 					"children": [
-						{ "name": "Me 1", "value": "folding-1.jpg" }
+						{ "name": "Download", "value": "folding-1.jpg" }
 					]
 				},
 				{
-					"name": "Contact Form",
+					"name": "Email",
 					"children": [
-						{ "name": "Form 1", "value": "stitched-1.jpg" }
+						{ "name": "Phone", "value": "stitched-1.jpg" }
 					]
 				}			
 			]
@@ -58,16 +62,20 @@
 				{
 					"name": "Login",
 					"children": [
-						{ "name": "loginfeature", "value": "folding-1.jpg" }
-					]
+                        { "name": "loginfeature", "value": "folding-1.jpg" }
+                    ],
+                    "component": <Login />
 				},
 				{
 					"name": "Register",
 					"children": [
 						{ "name": "reagisterfeature", "value": "stitched-1.jpg" }
-					]
+                    ],
+                    "component": <Register />
 				}			
 			]
 		}
 	]
-}
+}]
+
+export default pageData;

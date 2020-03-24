@@ -6,9 +6,8 @@ import StateManagment from "./StateManagement"
 
 function TreeMap(props) {
     
-    const [focus, setFocus] = useState(null);
-    const [botClick, setBotClick ] = useState(null)
-    const [topClick, setTopClick ] = useState(null)
+    const [clickData, setClickData] = useState(null);
+    
     const ref = useRef();
 
   
@@ -96,23 +95,21 @@ function TreeMap(props) {
         function zoom(d) { // http://jsfiddle.net/ramnathv/amszcymq/
             
             // console.log('clicked: ' + d.data.name , "ALL: ", d.data);
-            if((d.data.children)){
+            // if((d.data.children)){
                 
-                if(d.data.children.length > 1){
-                    setBotClick(d.data.name)
-                    setFocus(null)
+            //     if(d.data.children.length > 1){
+            //         setBotClick(d.data.name)
+            //         setFocus(null)
                     
-                }else{   
-                    setTopClick(d.data.name)
-                    setFocus(d.data.children[0].name)
-                }
-            }
-            
-            // if (d.data.name === "About Me"){
-            //     let node = d3.select("#Profile")
-            //     // node.append("p").text("HELLO")
+            //     }else{   
+            //         setTopClick(d.data.name)
+            //         setFocus(d.data.children[0].name)
+            //     }
             // }
-
+            if((d)){
+                setClickData(d)
+            }
+        
             currentDepth = d.depth;
             parent.datum(d.parent || nodes);
             
@@ -145,7 +142,7 @@ function TreeMap(props) {
   
   return (
     <div className="feature" ref={ref}>
-    <StateManagment focus={focus} treeMapData={props.treeMapData} botLevel={botClick} topLevel={topClick}/>
+    <StateManagment treeMapData={props.treeMapData} clickData={clickData}/>
         <nav>
             <div className="up">&larr; UP</div>
                   

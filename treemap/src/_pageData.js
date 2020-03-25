@@ -6,7 +6,8 @@ const pageData = [{
 	"name": "Portfolio",
 	"children": [
 		{
-			"name": "About Me",
+			"name": "About",
+			"displayText": "My resume and a blog of some kind.",
 			"children": [
 				{
 					"name": "Resume",
@@ -23,29 +24,13 @@ const pageData = [{
 			]
 		},
 		{
-			"name": "Projects",
-			"children": [
-				{
-					"name": "Games",
-					"children": [
-						{ "name": "Snake", "value": "litho-1.jpg" }
-					]
-				},
-				{
-					"name": "D3",
-					"children": [
-						{ "name": "MLB", "value": "digital-1.jpg" }
-					]
-				}
-			]
-		},
-		{
 			"name": "Contact",
+			"displayText": "Social Media and Email address",
 			"children": [
 				{
-					"name": "Resume",
+					"name": "Social Media",
 					"children": [
-						{ "name": "Download", "value": "folding-1.jpg" }
+						{ "name": "Media", "value": "folding-1.jpg" }
 					]
 				},
 				{
@@ -57,7 +42,22 @@ const pageData = [{
 			]
 		},
 		{
-			"name": "Sign Up",
+			"name": "DataFluent",
+			"displayText": "Creative solutions for cleaning, analyzing and visualizing data.",
+			"children": [
+				{
+					"name": "DBA DataFluent",
+					"children": [
+						{ "name": "dataFluentFeature", "value": "folding-1.jpg" },
+						{ "name": "anotherContactForm", "value": "folding-1.jpg" },
+                    ],
+                    
+				},			
+			]
+		},
+		{
+			"name": "Login",
+			"displayText": "Sign up to record high scores and comment on projects.",
 			"children": [
 				{
 					"name": "Login",
@@ -73,6 +73,42 @@ const pageData = [{
                     ],
                     "component": <Register />
 				}			
+			]
+		},
+		{
+			"name": "Projects",
+			"displayText": "Live projects and Github links.",
+			"children": [
+				{
+					"name": "Games",
+					"children": [
+						{ "name": "Snake", "value": "litho-1.jpg" }
+					]
+				},
+				{
+					"name": "D3",
+					"children": [
+						{ "name": "MLB", "value": "digital-1.jpg" }
+					]
+				},
+				{
+					"name": "Maps",
+					"children": [
+						{ "name": "denver311", "value": "litho-1.jpg" }
+					]
+				},
+				{
+					"name": "GPS Heatmap",
+					"children": [
+						{ "name": "gpsHeatMap", "value": "litho-1.jpg" }
+					]
+				},
+				{
+					"name": "Tetris",
+					"children": [
+						{ "name": "tetris", "value": "litho-1.jpg" }
+					]
+				},
 			]
 		}
 	]

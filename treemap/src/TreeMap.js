@@ -19,7 +19,7 @@ function TreeMap(props) {
             x = d3.scaleLinear().domain([0, width]).range([0, width]),
             y = d3.scaleLinear().domain([0, height]).range([0, height]),
             color = d3.scaleOrdinal()
-            .range(d3.schemeCategory10
+            .range(d3.schemeDark2
                 .map(function(c) { 
                     c = d3.rgb(c);  
                     return c; 
@@ -76,11 +76,14 @@ function TreeMap(props) {
                 while (d.depth > 2) d = d.parent;
                 return color(d.data.name);
             })
-            .on("click", zoom)
-            .append("p")
+            .on("click", zoom);
+            Cells.append("p")
             .attr("class", "label")
             .text(function(d) {
                 return d.data.name ? d.data.name : "---";
+            })
+            Cells.append("p").attr("class", "text").text(function(d) {
+                return d.data.displayText ? d.data.displayText : "---";
             });
         
         

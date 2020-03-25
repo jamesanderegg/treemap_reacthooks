@@ -58,7 +58,24 @@ nav .up:hover {
   position: absolute;
   padding: 1;
   margin: 0;
-  top: 50%;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  transition: color 0.4s, opacity 0.8s, -webkit-filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s;
+  transition: color 0.4s, opacity 0.8s, filter 0.8s, -webkit-filter 0.8s;
+}
+.node .text {
+  display: inline;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  font-size: 40%;
+  padding: 1;
+  text-indent: 1em;
+  margin: 0;
+  top: 65%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
@@ -75,6 +92,9 @@ nav .up:hover {
           filter: blur(10px);
 }
 .node:hover .label {
+  color: white;
+}
+.node:hover .text {
   color: white;
 }
 .node.level-0 {
